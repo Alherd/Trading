@@ -1,148 +1,499 @@
+<%= stylesheet_link_tag "style", media: "all" %>
+
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Square div in Bootstrap</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-
-<style>
-
-@media screen and (min-width: 768px) {
-  .row.row-tile .col-sm-3.tile {
-    padding: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-top-width: 0;
-    border-left-width: 3px;
-    border-right-width: 3px;
-    border-bottom-width: 0;
-    margin-bottom: 6px;
-  }
-  .row.row-tile .col-sm-3.tile.square {
-    padding-bottom: 25%;
-  }
-  .row.row-tile .col-md-10.tile {
-    padding: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-top-width: 0;
-    border-left-width: 3px;
-    border-right-width: 3px;
-    border-bottom-width: 0;
-    margin-bottom: 6px;
-  }
-}
-.row.row-tile .tile-content-blue {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #4679BD;
-}
-.row.row-tile .tile-content-yellow {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #ffff00;
-}
-.row.row-tile .tile-content-silver {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #c0c0c0;
-}
-.row.row-tile .tile-content-red {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #ff0000;
-}
-.row.row-tile .tile-content1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-}
-
-.row.row-tile [class*="col-"] .tile-content-blue:hover {
-  box-shadow: #bbb 0px 0px 0px 2px;
-}
-.row.row-tile [class*="col-"] .tile-content-silver:hover {
-  box-shadow: #bbb 0px 0px 0px 2px;
-}
-.row.row-tile [class*="col-"] .tile-content-red:hover {
-  box-shadow: #bbb 0px 0px 0px 2px;
-}
-.row.row-tile [class*="col-"] .tile-content-yellow:hover {
-  box-shadow: #bbb 0px 0px 0px 2px;
-}
-</style>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PoC</title>
+  <link href="app/assets/stylesheets/style.css" rel="stylesheet">
+  <%# <link href='css/roboto-font.css' rel='stylesheet' type='text/css'> %>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="container">
-  <h1>Houses</h1>
-  <div class="row row-tile">
-    <div class="col-md-10 tile">
-
-      <div class="row row-tile">
-        <div class="col-sm-3 tile square ">
-          <div class="tile-content-blue">
-            <br><br><br>
-            taker_user_id: 1<br>
-            maker_user_id: 3<br>
-            qty: 21<br>
-            price: 1.7<br>
-            qty_left: 12<br>
+<div class="page-content">
+  <div class="card red">
+    <div class="header">
+      <div class="image-container">
+        <img src="img/gite.svg" alt="gite"/>
+      </div>
+      <span>Red house</span>
+    </div>
+    <div class="statistics">
+      <div class="item">
+        <span class="title">10</span>
+        <span class="text">Downstream</span>
+      </div>
+      <div class="item">
+        <span class="title">74</span>
+        <span class="text">Upstream</span>
+      </div>
+      <div class="item disabled">
+        <span class="title">3.2</span>
+        <span class="text">Gen voltage</span>
+      </div>
+      <div class="item disabled">
+        <span class="title">2.2</span>
+        <span class="text">Var voltage</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="item button-block">
+        <div class="button enabled">
+          <img src="img/lightbulb-dark.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 1</span>
+            <span class="additional">on</span>
           </div>
         </div>
-        <div class="col-sm-3 col-xs-6 tile square">
-          <div class="tile-content-yellow">
-            <br><br><br>
-            taker_user_id: 2<br>
-            maker_user_id: 4<br>
-            qty: 13<br>
-            price: 1.5<br>
-            qty_left: 6
+        <div class="button">
+          <img src="img/lightbulb.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 2</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-end-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">MG</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button disabled">
+          <img src="img/line-start-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">PS</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button additional">
+          <img src="img/bolt.svg" alt="Bolt"/>
+          <div class="title">
+            <span class="main">Additional load</span>
+            <span class="additional">off</span>
           </div>
         </div>
       </div>
-
-      <div class="row row-tile">
-        <div class="col-sm-3 col-xs-6 tile square">
-          <div class="tile-content-silver">
-            <br><br><br>
-            taker_user_id: 4<br>
-            maker_user_id: 1<br>
-            qty: 8<br>
-            price: 0.4<br>
-            qty_left: 3<br>
+      <div class="item wallet">
+        <div class="header">
+          <img src="img/wallet.svg" alt="Wallet"/>
+          <span>$ 124</span>
+        </div>
+        <div class="content">
+          <div class="title">Wallet</div>
+          <div class="list">
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
           </div>
         </div>
-        <div class="col-sm-3 col-xs-6 tile square">
-          <div class="tile-content-red">
-            <br><br><br>
-            taker_user_id: 2<br>
-            maker_user_id: 4<br>
-            qty: 15<br>
-            price: 1.8<br>
-            qty_left: 6<br>
-          </div>
       </div>
-      
+    </div>
+  </div>
+  <div class="card blue">
+    <div class="header">
+      <div class="image-container">
+        <img src="img/gite.svg" alt="gite"/>
+      </div>
+      <span>Blue house</span>
+    </div>
+    <div class="statistics">
+      <div class="item">
+        <span class="title">10</span>
+        <span class="text">Downstream</span>
+      </div>
+      <div class="item">
+        <span class="title">74</span>
+        <span class="text">Upstream</span>
+      </div>
+      <div class="item disabled">
+        <span class="title">3.2</span>
+        <span class="text">Gen voltage</span>
+      </div>
+      <div class="item">
+        <span class="title">2.2</span>
+        <span class="text">Var voltage</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="item button-block">
+        <div class="button enabled">
+          <img src="img/lightbulb-dark.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 1</span>
+            <span class="additional">on</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/lightbulb.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 2</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-end-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">MG</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-start-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">PS</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button additional">
+          <img src="img/bolt.svg" alt="Bolt"/>
+          <div class="title">
+            <span class="main">Additional load</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+      </div>
+      <div class="item wallet">
+        <div class="header">
+          <img src="img/wallet.svg" alt="Wallet"/>
+          <span>$ 124</span>
+        </div>
+        <div class="content">
+          <div class="title">Wallet</div>
+          <div class="list">
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card grey-half">
+    <div class="content">
+      <div class="image-container">
+        <img src="img/gite-red.svg" alt="gite"/>
+        <img src="img/gite-blue.svg" alt="gite"/>
+        <img src="img/dynamic-form.svg" alt="gite"/>
+        <img src="img/gite-yellow.svg" alt="gite"/>
+        <img src="img/gite-green.svg" alt="gite"/>
+      </div>
+    </div>
+    <div class="list">
+      <div class="element">
+        <p>Sell</p>
+        <p>04.05.2023</p>
+        <p>$ 124</p>
+      </div>
+      <div class="element">
+        <p>Sell</p>
+        <p>04.05.2023</p>
+        <p>$ 124</p>
+      </div>
+      <div class="element">
+        <p>Sell</p>
+        <p>04.05.2023</p>
+        <p>$ 124</p>
+      </div>
+    </div>
+  </div>
+  <div class="card yellow">
+    <div class="header">
+      <div class="image-container">
+        <img src="img/gite.svg" alt="gite"/>
+      </div>
+      <span>Yellow house</span>
+    </div>
+    <div class="statistics">
+      <div class="item">
+        <span class="title">10</span>
+        <span class="text">Downstream</span>
+      </div>
+      <div class="item">
+        <span class="title">74</span>
+        <span class="text">Upstream</span>
+      </div>
+      <div class="item">
+        <span class="title">3.2</span>
+        <span class="text">Gen voltage</span>
+      </div>
+      <div class="item disabled">
+        <span class="title">2.2</span>
+        <span class="text">Var voltage</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="item button-block">
+        <div class="button enabled">
+          <img src="img/lightbulb-dark.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 1</span>
+            <span class="additional">on</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/lightbulb.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 2</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-end-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">MG</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-start-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">PS</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button additional">
+          <img src="img/bolt.svg" alt="Bolt"/>
+          <div class="title">
+            <span class="main">Additional load</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+      </div>
+      <div class="item wallet">
+        <div class="header">
+          <img src="img/wallet.svg" alt="Wallet"/>
+          <span>$ 124</span>
+        </div>
+        <div class="content">
+          <div class="title">Wallet</div>
+          <div class="list">
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card green">
+    <div class="header">
+      <div class="image-container">
+        <img src="img/gite.svg" alt="gite"/>
+      </div>
+      <span>Green house</span>
+    </div>
+    <div class="statistics">
+      <div class="item">
+        <span class="title">10</span>
+        <span class="text">Downstream</span>
+      </div>
+      <div class="item">
+        <span class="title">74</span>
+        <span class="text">Upstream</span>
+      </div>
+      <div class="item">
+        <span class="title">3.2</span>
+        <span class="text">Gen voltage</span>
+      </div>
+      <div class="item">
+        <span class="title">2.2</span>
+        <span class="text">Var voltage</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="item button-block">
+        <div class="button enabled">
+          <img src="img/lightbulb-dark.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 1</span>
+            <span class="additional">on</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/lightbulb.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 2</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-end-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">MG</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-start-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">PS</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button additional">
+          <img src="img/bolt.svg" alt="Bolt"/>
+          <div class="title">
+            <span class="main">Additional load</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+      </div>
+      <div class="item wallet">
+        <div class="header">
+          <img src="img/wallet.svg" alt="Wallet"/>
+          <span>$ 124</span>
+        </div>
+        <div class="content">
+          <div class="title">Wallet</div>
+          <div class="list">
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card grey">
+    <div class="header">
+      <div class="image-container">
+        <img src="img/gite.svg" alt="gite"/>
+      </div>
+      <span>Operator</span>
+    </div>
+    <div class="statistics">
+      <div class="item">
+        <span class="title">10</span>
+        <span class="text">Downstream</span>
+      </div>
+      <div class="item">
+        <span class="title">74</span>
+        <span class="text">Upstream</span>
+      </div>
+      <div class="item">
+        <span class="title">3.2</span>
+        <span class="text">Gen voltage</span>
+      </div>
+      <div class="item">
+        <span class="title">2.2</span>
+        <span class="text">Var voltage</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="item button-block">
+        <div class="button enabled">
+          <img src="img/lightbulb-dark.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 1</span>
+            <span class="additional">on</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/lightbulb.svg" alt="Bulb"/>
+          <div class="title">
+            <span class="main">Led 2</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-end-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">MG</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button">
+          <img src="img/line-start-circle.svg" alt="Circle"/>
+          <div class="title">
+            <span class="main">PS</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+        <div class="button additional">
+          <img src="img/bolt.svg" alt="Bolt"/>
+          <div class="title">
+            <span class="main">Additional load</span>
+            <span class="additional">off</span>
+          </div>
+        </div>
+      </div>
+      <div class="item wallet">
+        <div class="header">
+          <img src="img/wallet.svg" alt="Wallet"/>
+          <span>$ 124</span>
+        </div>
+        <div class="content">
+          <div class="title">Wallet</div>
+          <div class="list">
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+            <div class="element">
+              <p>Sell</p>
+              <p>04.05.2023</p>
+              <p>$ 124</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 </body>
 </html>
