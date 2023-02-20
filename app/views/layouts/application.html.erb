@@ -37,16 +37,17 @@
         <span class="text">Var voltage</span>
       </div>
     </div>
+
     <div class="panel">
       <div class="item button-block">
-        <div class="button enabled">
+        <div class="button enabled" onclick="chargermasse()">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">on</span>
+            <span class="additional">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="firstId" class="button" onclick="button_click(this)" style="cursor:pointer">
           <%= show_svg("lightbulb") %>
           <div class="title">
             <span class="main">Led 2</span>
@@ -197,11 +198,21 @@
   <div class="card grey-half">
     <div class="content">
       <div class="image-container">
-        <%= show_svg("gite-red") %>
-        <%= show_svg("gite-blue") %>
-        <%= show_svg("dynamic-form") %>
-        <%= show_svg("gite-yellow") %>
-        <%= show_svg("gite-green") %>
+        <div class="gite">
+          <%= show_svg("gite-red") %>
+        </div>
+        <div class="gite">
+          <%= show_svg("gite-blue") %>
+        </div>
+        <div class="dynamic">
+          <%= show_svg("dynamic-form") %>
+        </div>
+        <div class="gite">
+          <%= show_svg("gite-yellow") %>
+        </div>
+        <div class="gite">
+          <%= show_svg("gite-green") %>
+        </div>
       </div>
     </div>
     <div class="list">
@@ -253,7 +264,7 @@
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">on</span>
+            <span class="additional">off</span>
           </div>
         </div>
         <div class="button">
@@ -344,7 +355,7 @@
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">on</span>
+            <span class="additional">off</span>
           </div>
         </div>
         <div class="button">
@@ -498,3 +509,44 @@
 </div>
 </body>
 </html>
+
+<script type="text/javascript">
+  function chargermasse(){
+    console.log("Hello world!");
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://3.71.27.170:8083/gtw/1/hw/relay/switch,2,1");
+    xhr.send();
+    xhr.onload = () => {
+    const data = xhr.response;
+
+    console.log(JSON.parse(data).exec.rc);
+};
+  }
+
+    function button_click(){
+console.log("Hello button");
+// $( ".button" ).css('background', 'green');
+var btn = document.getElementById('firstId');
+
+btn.classList.toggle("enabled");
+console.log(btn.classList);
+
+
+// ✅ Change button text on click
+// btn.addEventListener('click', function handleClick() {
+  // console.log(btn.title.textContent)
+  // console.log(btn.classList)
+  // btn.classList.toggle("button");
+// btn.removeClass('button').addClass('button enabled')
+  // btn.toggleClass('buttonClassB');
+  // btn.innerHTML = '<span style="background-color: salmon">Button clicked<span>;
+
+// });
+
+};
+
+  //   $( ".button" ).click(function() {
+  //   console.log("Hello button");
+  //   $( ".button" ).css('background', 'green');
+  // });
+</script>

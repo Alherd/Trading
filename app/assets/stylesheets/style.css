@@ -271,20 +271,14 @@ body {
     margin-left: 90px;
 }
 
-.card.grey-half .content .image-container img {
+.card.grey-half .content .image-container .gite {
     margin-right: 114px;
 }
-.card.grey-half .content .image-container img:nth-child(3n) {
+
+.card.grey-half .content .image-container .dynamic {
     margin: 20px 70px;
 }
 
-
-
-
-
-
-
-
-
-
-
+.card.grey-half .content .image-container img:nth-child(3n) {
+    margin: 20px 70px;
+}
