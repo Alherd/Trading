@@ -260,7 +260,7 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div id="thirdId0" class="button enabled" onclick="chargermasse(3, 0, 'thirdId0', 'additional02')" style="cursor:pointer">
+        <div id="thirdId0" class="button" onclick="chargermasse(3, 0, 'thirdId0', 'additional02')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
@@ -351,7 +351,7 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div id="forthId0" class="button enabled" onclick="chargermasse(4, 0, 'forthId0', 'additional03')" style="cursor:pointer">
+        <div id="forthId0" class="button" onclick="chargermasse(4, 0, 'forthId0', 'additional03')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
@@ -442,11 +442,11 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div id="fifthId0" class="button enabled" onclick="chargermasse(5, 0, 'fifthId0', 'additional05')" style="cursor:pointer">
+        <div id="fifthId0" class="button" onclick="chargermasse(5, 0, 'fifthId0', 'additional05')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional" id="additional05">on</span>
+            <span class="additional" id="additional05">off</span>
           </div>
         </div>
         <div id="fifthId1" class="button" onclick="chargermasse(5, 1, 'fifthId1', 'additional15')" style="cursor:pointer">
@@ -511,6 +511,51 @@
 </html>
 
 <script type="text/javascript">
+
+buttonEnabled();
+
+  function buttonEnabled() {
+    const buttons = ["firstId0", "firstId1", "firstId2", "firstId4", "secondId0", "secondId1", "secondId2", "secondId3", "secondId4", "thirdId0", "thirdId1", "thirdId2", "thirdId3", "thirdId4", "forthId0", "forthId1", "forthId2", "forthId3", "forthId4", "fifthId0", "fifthId1", "fifthId2", "fifthId3", "fifthId4"];
+    const additionalButtos=["additional0", "additional1", "additional2", "additional4", "additional01", "additional11", "additional21", "additional31", "additional41", "additional02", "additional12", "additional22", "additional32", "additional42", "additional03", "additional13", "additional23", "additional33", "additional43", "additional05", "additional15", "additional25", "additional35", "additional45"]
+
+
+        const urls = ["http://3.71.27.170:8083/gtw/1/hw/relay/state,0", "http://3.71.27.170:8083/gtw/1/hw/relay/state,1", "http://3.71.27.170:8083/gtw/1/hw/relay/state,2", "http://3.71.27.170:8083/gtw/1/hw/relay/state,4",
+        "http://3.71.27.170:8083/gtw/2/hw/relay/state,0", "http://3.71.27.170:8083/gtw/2/hw/relay/state,1", "http://3.71.27.170:8083/gtw/2/hw/relay/state,2", "http://3.71.27.170:8083/gtw/2/hw/relay/state,3", "http://3.71.27.170:8083/gtw/2/hw/relay/state,4", "http://3.71.27.170:8083/gtw/3/hw/relay/state,0", "http://3.71.27.170:8083/gtw/3/hw/relay/state,1", "http://3.71.27.170:8083/gtw/3/hw/relay/state,2", "http://3.71.27.170:8083/gtw/3/hw/relay/state,3", "http://3.71.27.170:8083/gtw/3/hw/relay/state,4", "http://3.71.27.170:8083/gtw/4/hw/relay/state,0", "http://3.71.27.170:8083/gtw/4/hw/relay/state,1", "http://3.71.27.170:8083/gtw/4/hw/relay/state,2", "http://3.71.27.170:8083/gtw/4/hw/relay/state,3", "http://3.71.27.170:8083/gtw/4/hw/relay/state,4", "http://3.71.27.170:8083/gtw/5/hw/relay/state,0", "http://3.71.27.170:8083/gtw/5/hw/relay/state,1", "http://3.71.27.170:8083/gtw/5/hw/relay/state,2", "http://3.71.27.170:8083/gtw/5/hw/relay/state,3", "http://3.71.27.170:8083/gtw/5/hw/relay/state,4"]
+
+console.log(buttons.length)
+console.log(additionalButtos.length)
+console.log(urls.length)
+
+    for (let i = 0; i < urls.length; i++) {
+      console.log(urls[i])
+
+    const xhr = new XMLHttpRequest();
+
+      xhr.open("GET", urls[i]);
+      xhr.send();
+
+      xhr.onload = () => {
+      console.log('console')
+      console.log(xhr.response)
+
+    status = JSON.parse(xhr.response).resp.switch_state
+    console.log(status)
+
+    if (status == 1) {
+      console.log(i)
+      console.log(btn)
+      console.log(buttons[i])
+      var btn = document.getElementById(buttons[i]);
+      var additionalBtn = document.getElementById(additionalButtos[i]);
+      console.log(btn)
+      console.log(buttons[i])
+      btn.classList.toggle("enabled");
+      additionalBtn.innerHTML = 'on';
+      console.log("End initial handle");
+    }
+  }
+    }
+  }
 
   function chargermasse(house_id, switch_id, button_id, text_id) {
     console.log("Starting button handle...");
