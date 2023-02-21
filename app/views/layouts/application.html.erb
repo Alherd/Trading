@@ -40,25 +40,25 @@
 
     <div class="panel">
       <div class="item button-block">
-        <div class="button enabled" onclick="chargermasse()">
+        <div id="firstId0" class="button" onclick="chargermasse(1, 0, 'firstId0', 'additional0')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">off</span>
+            <span class="additional0" id="additional0">off</span>
           </div>
         </div>
-        <div id="firstId" class="button" onclick="button_click(this)" style="cursor:pointer">
-          <%= show_svg("lightbulb") %>
+        <div id="firstId1" class="button" onclick="chargermasse(1, 1, 'firstId1', 'additional1')" style="cursor:pointer">
+          <div id="pic1"><%= show_svg("lightbulb") %></div>
           <div class="title">
             <span class="main">Led 2</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional1">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="firstId2" class="button" onclick="chargermasse(1, 2, 'firstId2', 'additional2')" style="cursor:pointer">
           <%= show_svg("line-end-circle") %>
           <div class="title">
             <span class="main">MG</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional2">off</span>
           </div>
         </div>
         <div class="button disabled">
@@ -68,11 +68,11 @@
             <span class="additional">off</span>
           </div>
         </div>
-        <div class="button additional">
+        <div id="firstId4" class="button additional" onclick="chargermasse(1, 4, 'firstId4', 'additional4')" style="cursor:pointer">
           <%= show_svg("bolt") %>
           <div class="title">
             <span class="main">Additional load</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional4">off</span>
           </div>
         </div>
       </div>
@@ -131,39 +131,39 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div class="button enabled">
+        <div id="secondId0" class="button" onclick="chargermasse(2, 0, 'secondId0', 'additional01')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">on</span>
+            <span class="additional" id="additional01">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="secondId1" class="button" onclick="chargermasse(2, 1, 'secondId1', 'additional11')" style="cursor:pointer">
           <%= show_svg("lightbulb") %>
           <div class="title">
             <span class="main">Led 2</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional11">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="secondId2" class="button" onclick="chargermasse(2, 2, 'secondId2', 'additional21')" style="cursor:pointer">
           <%= show_svg("line-end-circle") %>
           <div class="title">
             <span class="main">MG</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional21">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="secondId3" class="button" onclick="chargermasse(2, 3, 'secondId3', 'additional31')" style="cursor:pointer">
           <%= show_svg("line-start-circle") %>
           <div class="title">
             <span class="main">PS</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional31">off</span>
           </div>
         </div>
-        <div class="button additional">
+        <div id="secondId4" class="button additional" onclick="chargermasse(2, 4, 'secondId4', 'additional41')" style="cursor:pointer">
           <%= show_svg("bolt") %>
           <div class="title">
             <span class="main">Additional load</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional41">off</span>
           </div>
         </div>
       </div>
@@ -260,39 +260,39 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div class="button enabled">
+        <div id="thirdId0" class="button enabled" onclick="chargermasse(3, 0, 'thirdId0', 'additional02')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional02">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="thirdId1" class="button" onclick="chargermasse(3, 1, 'thirdId1', 'additional12')" style="cursor:pointer">
           <%= show_svg("lightbulb") %>
           <div class="title">
             <span class="main">Led 2</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional12">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="thirdId2" class="button" onclick="chargermasse(3, 2, 'thirdId2', 'additional22')" style="cursor:pointer">
           <%= show_svg("line-end-circle") %>
           <div class="title">
             <span class="main">MG</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional22">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="thirdId3" class="button" onclick="chargermasse(3, 3, 'thirdId3', 'additional32')" style="cursor:pointer">
           <%= show_svg("line-start-circle") %>
           <div class="title">
             <span class="main">PS</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional32">off</span>
           </div>
         </div>
-        <div class="button additional">
+        <div id="thirdId4" class="button additional" onclick="chargermasse(3, 4, 'thirdId4', 'additional42')" style="cursor:pointer">
           <%= show_svg("bolt") %>
           <div class="title">
             <span class="main">Additional load</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional42">off</span>
           </div>
         </div>
       </div>
@@ -351,39 +351,39 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div class="button enabled">
+        <div id="forthId0" class="button enabled" onclick="chargermasse(4, 0, 'forthId0', 'additional03')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional03">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="forthId1" class="button" onclick="chargermasse(4, 1, 'forthId1', 'additional13')" style="cursor:pointer">
           <%= show_svg("lightbulb") %>
           <div class="title">
             <span class="main">Led 2</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional13">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="forthId2" class="button" onclick="chargermasse(4, 2, 'forthId2', 'additional23')" style="cursor:pointer">
           <%= show_svg("line-end-circle") %>
           <div class="title">
             <span class="main">MG</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional23">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="forthId3" class="button" onclick="chargermasse(4, 3, 'forthId3', 'additional33')" style="cursor:pointer">
           <%= show_svg("line-start-circle") %>
           <div class="title">
             <span class="main">PS</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional33">off</span>
           </div>
         </div>
-        <div class="button additional">
+        <div id="forthId4" class="button additional" onclick="chargermasse(4, 4, 'forthId4', 'additional43')" style="cursor:pointer">
           <%= show_svg("bolt") %>
           <div class="title">
             <span class="main">Additional load</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional43">off</span>
           </div>
         </div>
       </div>
@@ -442,39 +442,39 @@
     </div>
     <div class="panel">
       <div class="item button-block">
-        <div class="button enabled">
+        <div id="fifthId0" class="button enabled" onclick="chargermasse(5, 0, 'fifthId0', 'additional05')" style="cursor:pointer">
           <%= show_svg("lightbulb-dark") %>
           <div class="title">
             <span class="main">Led 1</span>
-            <span class="additional">on</span>
+            <span class="additional" id="additional05">on</span>
           </div>
         </div>
-        <div class="button">
+        <div id="fifthId1" class="button" onclick="chargermasse(5, 1, 'fifthId1', 'additional15')" style="cursor:pointer">
           <%= show_svg("lightbulb") %>
           <div class="title">
             <span class="main">Led 2</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional15">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="fifthId2" class="button" onclick="chargermasse(5, 2, 'fifthId2', 'additional25')" style="cursor:pointer">
           <%= show_svg("line-end-circle") %>
           <div class="title">
             <span class="main">MG</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional25">off</span>
           </div>
         </div>
-        <div class="button">
+        <div id="fifthId3" class="button" onclick="chargermasse(5, 3, 'fifthId3', 'additional35')" style="cursor:pointer">
           <%= show_svg("line-start-circle") %>
           <div class="title">
             <span class="main">PS</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional35">off</span>
           </div>
         </div>
-        <div class="button additional">
+        <div id="fifthId4" class="button additional" onclick="chargermasse(5, 4, 'fifthId4', 'additional45')" style="cursor:pointer">
           <%= show_svg("bolt") %>
           <div class="title">
             <span class="main">Additional load</span>
-            <span class="additional">off</span>
+            <span class="additional" id="additional45">off</span>
           </div>
         </div>
       </div>
@@ -511,42 +511,45 @@
 </html>
 
 <script type="text/javascript">
-  function chargermasse(){
-    console.log("Hello world!");
+
+  function chargermasse(house_id, switch_id, button_id, text_id) {
+    console.log("Starting button handle...");
+    var addit_btn = document.getElementById(text_id);
+    var btn = document.getElementById(button_id);
+    requested_state = addit_btn.innerHTML == 'off' ? 1 : 0
+
+    request_url(house_id, switch_id, requested_state, btn, addit_btn)
+};
+
+  function request_url(house_id, switch_id, state, btn, addit_btn) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://3.71.27.170:8083/gtw/1/hw/relay/switch,2,1");
+    console.log(`house_id: ${house_id}`)
+    console.log(`switch_id: ${switch_id}`)
+    console.log(`state: ${state}`)
+
+    url = `http://3.71.27.170:8083/gtw/${house_id}/hw/relay/switch,${switch_id},${state}`
+
+    console.log(url)
+    xhr.open("GET", url);
     xhr.send();
+
     xhr.onload = () => {
-    const data = xhr.response;
+      console.log(xhr.response)
 
-    console.log(JSON.parse(data).exec.rc);
-};
+    status = JSON.parse(xhr.response).exec.rc
+
+    if (status == 0) {
+
+      btn.classList.toggle("enabled");
+
+      if (addit_btn.innerHTML == 'off') {
+          addit_btn.innerHTML = 'on';
+        } else {
+          addit_btn.innerHTML = 'off';
+      }
+
+    console.log("End button handling");
+    }
   }
-
-    function button_click(){
-console.log("Hello button");
-// $( ".button" ).css('background', 'green');
-var btn = document.getElementById('firstId');
-
-btn.classList.toggle("enabled");
-console.log(btn.classList);
-
-
-// ✅ Change button text on click
-// btn.addEventListener('click', function handleClick() {
-  // console.log(btn.title.textContent)
-  // console.log(btn.classList)
-  // btn.classList.toggle("button");
-// btn.removeClass('button').addClass('button enabled')
-  // btn.toggleClass('buttonClassB');
-  // btn.innerHTML = '<span style="background-color: salmon">Button clicked<span>;
-
-// });
-
-};
-
-  //   $( ".button" ).click(function() {
-  //   console.log("Hello button");
-  //   $( ".button" ).css('background', 'green');
-  // });
+  }
 </script>
